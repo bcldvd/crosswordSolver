@@ -1,32 +1,15 @@
-app.controller('mainCtrl', function($scope, Words, $element, $compile, $http, $log) {
-    //$scope.allWords = Words.all();
-
+app.controller('mainCtrl', function($scope, Words, $element, $compile, $http, $log, cfpLoadingBar) {
+    cfpLoadingBar.set(0.3);
     console.clear();
 
-    $scope.allWords = [
-        'a',
-        'un',
-        'bon',
-        'test',
-        'et',
-        'une',
-        'petite',
-        'liste',
-        'de',
-        'mots'];
-    $scope.words = {};
     $scope.possibleWords = [];
 
-    // Sort words by length
-    angular.forEach($scope.allWords, function(word) {
-        if(!$scope.words[word.length]) {
-            $scope.words[word.length] = [];
-        }
-        $scope.words[word.length].push(word);
+    // Get word list
+    Words.all().$promise.then(function(data) {
+        $scope.words = data[0];
     });
 
-    $log.debug($scope.words);
-
+    cfpLoadingBar.set(0.3);
 
     // Check predicate
     $scope.checkPredicate = function (input) {

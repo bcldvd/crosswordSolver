@@ -8,9 +8,10 @@
     <meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'>
 
 
-    <title>Cruciverbiste</title>
+    <title>crosswordSolver</title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/angular-loading-bar/src/loading-bar.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
@@ -29,23 +30,30 @@
     <script src="js/services/Words.js"></script>
     <script src="js/services/localStorage.js"></script>
     <script src="js/directives/spaceToStar.js"></script>
+    <script src="lib/angular-loading-bar/src/loading-bar.js"></script>
     <script src="lib/angular-resource/angular-resource.min.js"></script>
   </head>
   <body ng-app="starter">
 
     <ion-pane>
       <ion-header-bar class="bar-positive">
-        <h1 class="title">Cruciverbiste</h1>
+        <h1 class="title">crosswordSolver</h1>
       </ion-header-bar>
 
       <ion-content id="timerButtons" ng-controller="mainCtrl">
 
-          <input type="text" ng-model="predicate" autofocus ng-change="checkPredicate(predicate)" ng-trim="false" space-to-star/>
+          <div class="list list-inset">
+              <label class="item item-input">
+                  <i class="icon ion-search placeholder-icon"></i>
+                  <input type="text" placeholder="Rechercher" ng-model="predicate" autofocus ng-change="checkPredicate(predicate)" ng-trim="false" space-to-star>
+              </label>
+          </div>
 
-          <ul id="possibleWords">
-              <span ng-show="possibleWords.length > 0">{{ possibleWords.length }} possibilités</span>
-              <span ng-show="possibleWords.length == 0">Aucunes possibilités</span>
-              <li ng-repeat="word in possibleWords">{{ word }}</li>
+          <ul id="possibleWords" class="list">
+              <span ng-show="possibleWords.length > 1" class="item item-divider">{{ possibleWords.length }} possibilités</span>
+              <span ng-show="possibleWords.length == 1" class="item item-divider">{{ possibleWords.length }} possibilité</span>
+              <span ng-show="possibleWords.length == 0" class="item item-divider">Aucune possibilité</span>
+              <li ng-repeat="word in possibleWords" class="item">{{ word }}</li>
           </ul>
 
       </ion-content>

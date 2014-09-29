@@ -9,3 +9,22 @@ ion-content {
 #possibleWords {
     text-transform: uppercase;
 }
+
+/*
+ * override loading-bar CSS
+ */
+
+#loading-bar .bar {
+    background: white;
+    padding: 1px;
+}
+#loading-bar-spinner .spinner-icon {
+    border-top-color:  white;
+    border-left-color: white;
+}
+#loading-bar .peg {
+    -moz-box-shadow: white 1px 0 6px 1px;
+    -ms-box-shadow: white 1px 0 6px 1px;
+    -webkit-box-shadow: white 1px 0 6px 1px;
+    box-shadow: white 1px 0 6px 1px;
+}
