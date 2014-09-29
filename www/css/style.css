@@ -1,0 +1,11 @@
+.bar-positive .button-clear{
+  color:white!important;
+}
+
+ion-content {
+    text-align: center;
+}
+
+#possibleWords {
+    text-transform: uppercase;
+}
