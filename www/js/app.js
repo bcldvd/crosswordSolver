@@ -9,8 +9,9 @@ var app = angular.module('starter', [
     'angular-loading-bar'
 ]);
 
-app.config(function($logProvider){
+app.config(function($logProvider, cfpLoadingBarProvider){
     $logProvider.debugEnabled(false);
+    cfpLoadingBarProvider.includeSpinner = false;
 });
 
 app.run(function($ionicPlatform) {

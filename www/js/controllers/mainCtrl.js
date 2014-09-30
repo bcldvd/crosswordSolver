@@ -1,5 +1,4 @@
 app.controller('mainCtrl', function($scope, Words, $element, $compile, $http, $log, cfpLoadingBar) {
-    cfpLoadingBar.set(0.3);
     console.clear();
 
     $scope.possibleWords = [];
@@ -8,8 +7,6 @@ app.controller('mainCtrl', function($scope, Words, $element, $compile, $http, $l
     Words.all().$promise.then(function(data) {
         $scope.words = data[0];
     });
-
-    cfpLoadingBar.set(0.3);
 
     // Check predicate
     $scope.checkPredicate = function (input) {

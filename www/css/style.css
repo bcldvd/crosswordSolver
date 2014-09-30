@@ -1,5 +1,5 @@
-.bar-positive .button-clear{
-  color:white!important;
+body {
+    padding-top: 20px;
 }
 
 ion-content {
@@ -9,6 +9,8 @@ ion-content {
 #possibleWords {
     text-transform: uppercase;
 }
+
+
 
 /*
  * override loading-bar CSS

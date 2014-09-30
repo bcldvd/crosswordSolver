@@ -1,0 +1,11 @@
+CACHE MANIFEST
+
+# Version 0.1
+
+# Explicitly cached entries
+index.html
+api/words.json
+
+# All other resources (e.g. sites) require the user to be online.
+NETWORK:
+*
